@@ -1,0 +1,9 @@
+nav.navbar{
+    background-color: plum;
+}
+nav.navbar .nav-link{
+    /* color: white; */
+}
+nav.navbar .nav-link.active{
+    color: black;
+}

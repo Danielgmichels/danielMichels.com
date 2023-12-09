@@ -1,0 +1,23 @@
+$(function(){
+
+    $(document).on('submit', '#enviaEmail', function(){
+        $.ajax({
+            url: $URL + 'api/envia.php',
+            type: 'POST',
+            dataType: 'JSON',
+            data: $(this).serialize(),
+            success: function(retorno){
+                if(retorno.status == 'success'){
+                    $('.resultado').html(`
+                    <div class="alert alert-primary" role="alert">${retorno.message}</div>
+                    `)
+                }else{
+                    $('.resultado').html(`
+                    <div class="alert alert-primary" role="alert">${retorno.message}</div>
+                    `)
+                }
+            }
+        })
+        return false
+    })
+})
